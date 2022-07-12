@@ -1,0 +1,24 @@
+<h2>Ürün Listeleme</h2>
+  <table class="table table-striped">
+   <thead>
+    <tr>
+          <th>Ürün İd</th>
+          <th>Ürün Adı</th>
+          <th>Açıklama</th>    
+          <th>İşlem</th>     
+    </tr>
+   </thead>
+   <tbody>
+       <tr *ngFor="let obj of objectType">
+       <td>{{obj.id}}</td>
+       <td>{{obj.name}}</td>
+       <td>{{obj.descr}}</td>
+       <td>
+            <button (click)="updateObjectType(obj)" class="btn btn-warning" style="margin-right:10px">Güncelle</button> 
+            <button (click)="deleteObjectType(obj)" class="btn btn-danger" style="margin-left:10px">Sil</button> 
+       </td>
+      </tr>
+
+   </tbody>
+  </table>
+

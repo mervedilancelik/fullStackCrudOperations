@@ -1,0 +1,34 @@
+<div class="col-md-6 offset-md-3">
+    <h3>Müşteri Güncelleme</h3>
+    <form (ngSubmit) = "onSubmit()">
+    
+        <div class="form-group">
+            <label>Müşteri Adı</label>
+            <input type="text" class ="form-control" id = "custName"
+                [(ngModel)] = "customer.name" name = "custName">
+        </div>
+
+        <div class="form-group">
+            <label>Müşteri Soyadı</label>
+            <input type="text" class ="form-control" id = "custSurname"
+                [(ngModel)] = "customer.surname" name = "custSurname">
+        </div>
+
+        <div class="form-group">
+            <label>Telefon</label>
+            <input type="text" class ="form-control" id = "phone"
+                [(ngModel)] = "customer.phone" name = "phone">
+        </div>
+
+        <div class="form-group">
+            <label>Mail</label>
+            <input type="text" class ="form-control" id = "mail"
+                [(ngModel)] = "customer.mail" name = "mail">
+        </div>
+    
+        <button class = "btn btn-success" type ="submit">Kaydet</button>
+    
+    </form>
+    </div>
+    
+    

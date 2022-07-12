@@ -1,0 +1,30 @@
+<h2>Ticket Listeleme</h2>
+  <table class="table table-striped">
+   <thead>
+    <tr>
+          <th>Ticket İd</th>
+          <th>Müşteri</th>
+          <th>Ticket Tipi</th>
+          <th>Ürün Adı</th>
+          <th>Ürün Parçası</th>
+          <th>Bakım Tarihi</th>
+          <th>İşlem</th> 
+    </tr>
+   </thead>
+   <tbody>
+       <tr *ngFor="let t of ticket">
+       <td>{{t.id}}</td>
+       <td>{{t.customer?.name}} {{t.customer?.surname}}</td>
+       <td>{{t.ticketType?.name}}</td>
+       <td>{{t.objectType?.name}}</td>
+       <td>{{t.objectPiece?.name}}</td>
+       <td>{{t.maintenanceDate| date :"dd.MM.y"}}</td>
+       <td>
+            <button (click)="updateTicket(t)" class="btn btn-warning" style="margin-right:10px">Güncelle</button> 
+            <button (click)="deleteTicket(t)" class="btn btn-danger" style="margin-left:10px">Sil</button> 
+       </td>
+      </tr>
+
+   </tbody>
+  </table>
+

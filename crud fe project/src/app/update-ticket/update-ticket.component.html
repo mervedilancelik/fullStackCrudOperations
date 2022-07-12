@@ -1,0 +1,65 @@
+<div class="col-md-6 offset-md-3">
+    <h3>Ticket Güncelleme</h3>
+    <form (ngSubmit) = "onSubmit()">
+        <div class="form-group">
+            <label for="customer">Müşteri Adı-Soyadı</label>
+            <select class="form-control" #customerName="ngModel"
+                  [(ngModel)]="ticket.customer.id" name="customer" >
+                  <option *ngFor="let cus of customer" [value]="cus.id">
+                      {{cus.name}} {{cus.surname}}               
+                  </option>      
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="ticketType"> Ticket Tipi</label>
+    
+            <select class="form-control" #ticketTypeId="ngModel"
+                  [(ngModel)]="ticket.ticketType.id" name="ticketTypeId" >
+                  <option *ngFor="let ty of ticketType" [value]="ty.id">
+                      {{ty.name}}
+                  </option>
+            </select>
+        </div>
+    
+        <div class="form-group">
+            <label for="objectType">Ürün Adı </label>
+    
+            <select ngModel class="form-control" #objectTypeId="ngModel" (ngModelChange)="changeTicketType($event)"
+                  [(ngModel)]="ticket.objectType.id" name="objectTypeId" >
+                  <option *ngFor="let ob of objectType" [value]="ob.id">
+                      {{ob.name}}
+                  </option>
+            </select>
+        </div>
+    
+        <div class="form-group">
+            <label for="objectPiece"> Ürün  Parçası</label>
+    
+            <select class="form-control" #objectPieceId="ngModel"
+                  [(ngModel)]="ticket.objectPiece.id" name="objectPieceId" >
+                  <option *ngFor="let obp of objectPiece" [value]="obp.id">
+                      {{obp.name}}
+                  </option>
+            </select>
+        </div>
+    
+        <div class="form-group">
+            <label>Açıklama</label>
+            <input type="text" class ="form-control" id = "descr"
+                [(ngModel)] = "ticket.descr" name = "descr">
+        </div>
+    
+        <div class="form-group">
+            <label>Bakım Tarihi</label>
+            <input type="date" class ="form-control" id = "maintenanceDate"
+                [(ngModel)] = "ticket.maintenanceDate" name = "maintenanceDate">
+        </div>
+
+        
+    
+        <button class = "btn btn-success" type ="submit">Kaydet</button>
+    
+    </form>
+    </div>
+    
+    

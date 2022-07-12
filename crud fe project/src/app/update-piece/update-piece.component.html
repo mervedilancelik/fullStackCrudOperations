@@ -1,0 +1,34 @@
+<div class="col-md-6 offset-md-3">
+    <h3>Ürün Parçası Güncelleme</h3>
+    <form (ngSubmit) = "onSubmit()">
+    
+        <div class="form-group">
+            <label>Parça Adı</label>
+            <input type="text" class ="form-control" id = "pieceName"
+                [(ngModel)] = "objectPiece.name" name = "pieceName">
+        </div>
+
+        <div class="form-group">
+            <label>Açıklama</label>
+            <input type="text" class ="form-control" id = "descr"
+                [(ngModel)] = "objectPiece.descr" name = "descr">
+        </div>
+
+        <div class="form-group">
+            <label for="objectType">Ürün Adı </label>
+    
+            <select class="form-control" #objectTypeId="ngModel"
+                  [(ngModel)]="id" name="objectTypeId" >
+                  <option *ngFor="let obj of objectType" [value]="obj.id">
+                      {{obj.name}}
+                  </option>
+            </select>
+        </div>
+    
+
+        <button class = "btn btn-success" type ="submit">Kaydet</button>
+    
+    </form>
+    </div>
+    
+    

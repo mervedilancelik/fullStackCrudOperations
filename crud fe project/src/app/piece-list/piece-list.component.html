@@ -1,0 +1,27 @@
+<h2>Ürün Parçası Listeleme</h2>
+  <table class="table table-striped">
+   <thead>
+    <tr>
+          <th>Parça İd</th>
+          <th>Parça Adı</th>
+          <th>Açıklama</th>    
+          <th>Ürün Adı</th>
+          <th>İşlem</th>
+           
+    </tr>
+   </thead>
+   <tbody>
+       <tr *ngFor="let piece of objectPiece">
+       <td>{{piece.id}}</td>
+       <td>{{piece.name}}</td>
+       <td>{{piece.descr}}</td>
+       <td *ngIf="piece.objectType">{{piece.objectType.name}}</td>
+       <td>
+            <button (click)="updateObjectPiece(piece)" class="btn btn-warning" style="margin-right:10px">Güncelle</button> 
+            <button (click)="deleteObjectPiece(piece)" class="btn btn-danger" style="margin-left:10px">Sil</button> 
+       </td>
+      </tr>
+      
+   </tbody>
+  </table>
+

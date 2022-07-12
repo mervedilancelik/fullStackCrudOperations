@@ -1,0 +1,26 @@
+<h2>Müşteri Listeleme</h2>
+  <table class="table table-striped">
+   <thead>
+    <tr>
+          <th>Müşteri İd</th>
+          <th>Müşteri</th>
+          <th>Telefon</th>
+          <th>Mail</th>
+          <th>İşlem</th>        
+    </tr>
+   </thead>
+   <tbody>
+       <tr *ngFor="let c of customer">
+       <td>{{c.id}}</td>
+       <td>{{c.name}} {{c.surname}}</td>
+       <td>{{c.phone}}</td>
+       <td>{{c.mail}}</td>
+       <td>
+            <button (click)="updateCustomer(c)" class="btn btn-warning" style="margin-right:10px">Güncelle</button> 
+            <button (click)="deleteCustomer(c)" class="btn btn-danger" style="margin-left:10px">Sil</button> 
+       </td>
+      </tr>
+
+   </tbody>
+  </table>
+
